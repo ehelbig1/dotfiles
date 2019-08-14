@@ -23,7 +23,7 @@ inoremap <buffer> <leader>o {<CR><CR>};<ESC>ki<Tab>
 nnoremap <buffer> <leader>s :0read ~/.vim/templates/javascript/switch.js<CR>f)i
 
 "Javascript Comment Line
-nnoremap <expr> <buffer> <leader>/ getline(".") =~ "//" ? "mq^2x\<ESC>`q" : "mqI//\<ESC>`q"
+nnoremap <expr> <buffer> <leader>/ getline(".") =~ "//" ? "^2x\<ESC><CR>" : "I//\<ESC><CR>"
 
 "Add Semicolon to end of line (keep cursor in same place)
 nnoremap <expr> <buffer> <leader>; getline(".") =~ ";$" ? "" : "mqA;\<ESC>`q"

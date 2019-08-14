@@ -20,8 +20,7 @@ nnoremap <buffer> <leader>o i{<CR><CR>};<ESC>ki<Tab>
 inoremap <buffer> <leader>o {<CR><CR>};<ESC>ki<Tab>
 
 "TypeScript Comment Line
-nnoremap <buffer> <leader>/ I//<ESC>
-inoremap <buffer> <leader>/ <ESC>I//<ESC>
+nnoremap <expr> <buffer> <leader>/ getline(".") =~ "//" ? "^2x\<ESC><CR>" : "I//\<ESC><CR>"
 
 "Add Semicolon to end of line (keep cursor in same place)
 nnoremap <expr> <buffer> <leader>; getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
