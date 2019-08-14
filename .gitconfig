@@ -1,0 +1,38 @@
+[user]
+	name = Evan Helbig
+	email = evan.helbig@willowtreeapps.com
+[core]
+	excludesfile = /Users/evanhelbig/.gitignore_global
+	autocrlf = input
+	safecrlf = true
+	editor = vim 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%Cred%h%Creset %ad | %C(yellow)%s%Cblue%d %Cgreen[%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	di = diff
+	sta = stash
+	flog = log --pretty-fuller --decorate
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+	blog = log origin/master... --left-right
+	ds = diff --staged
+	dh = diff HEAD~ HEAD
+	fixup = commit --fixup
+	squash = commit --squash
+	unstage = reset HEAD
+	rum = rebase master@{u}
+	a = add
+[diff]
+	tool = vimdiff
