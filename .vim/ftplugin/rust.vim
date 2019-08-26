@@ -13,8 +13,8 @@ nnoremap <buffer> <leader>ef :vsplit ~/.vim/ftplugin/rust.vim<CR>
 nnoremap <buffer> <leader>sf :source ~/.vim/ftplugin/rust.vim<CR>
 
 "Rust Function Declaration
-nnoremap <buffer> <leader>f ifn() {<CR><CR>}<ESC>2kwi<SPACE>
-inoremap <buffer> <leader>f fn() {<CR><CR>}<ESC>2kwi<SPACE>
+nnoremap <buffer> <leader>f ifn() {<CR><CR>}<ESC>2kf(i<SPACE>
+inoremap <buffer> <leader>f fn() {<CR><CR>}<ESC>2kf(i<SPACE>
 
 "Rust Comment Line
 nnoremap <expr> <buffer> <leader>/ getline(".") =~ "//" ? "^2x\<ESC><CR>" : "I//\<ESC><CR>"
@@ -57,5 +57,5 @@ setlocal makeprg=cargo\ check
 "Format file on save
 augroup onSave
 	autocmd!
-	autocmd BufWritePost *.rs :!rustfmt %
+	autocmd BufWritePost *.rs :!cargo fmt
 augroup END
